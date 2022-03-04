@@ -19,6 +19,7 @@ function App() {
     getLocalTodos();
   }, []);
 
+  // Run after every new item or status change
   useEffect(() => {
     filterHandler();
     saveLocalTodos();
@@ -41,11 +42,7 @@ function App() {
 
   // Save to localstorage
   const saveLocalTodos = () => {
-    // if (localStorage.getItem("todos") === null) {
-    //   localStorage.setItem("todos", JSON.stringify([]));
-    // } else {
     localStorage.setItem("todos", JSON.stringify(todos));
-    // }
   };
 
   const getLocalTodos = () => {
